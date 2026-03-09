@@ -1,6 +1,4 @@
 package com.TNSIF.inheritance;
-import java.util.*;
-
 class Animal1{
     void info(){
         System.out.println("Humans like to keep many domestic animal as there pet");
