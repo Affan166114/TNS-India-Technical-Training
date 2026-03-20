@@ -15,17 +15,14 @@ class Student implements Comparable<Student>{
     }
     
 }
-public class Acomparator {
+public class MixDemo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
     
     System.out.println("Enter number of students: ");
     int n = sc.nextInt();
 
-    Comparator<Student> co = (Student s1, Student s2) -> {
-            return (s1.age > s2.age) ? 1 : -1;
-        };
-    
+    Comparator<Student> co = (s1, s2) -> (s1.age > s2.age) ? 1 : -1;
 
     ArrayList<Student> l = new ArrayList<>();
     
