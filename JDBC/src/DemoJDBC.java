@@ -4,9 +4,11 @@ import java.sql.*;
 public class DemoJDBC {
     public static void main(String[] args) throws Exception {
 
+        String url = "jdbc:postgresql://localhost:5433/demoJDBC"; // Format: JDBC:Postgres Account(Software name): Database Name.  since the PostgreSql software is working on network we have to use "localhost:5432"
+        String uname = "postgres"; //default username for postgres
+        String pass = "syed166114"; // your set password
 
-
-        String sql = "select sname from student where sid=2";
+        String sql = "select * from student";
 
 
 //     STEP:2   loading and registering the driver (Not Important)
@@ -33,9 +35,21 @@ public class DemoJDBC {
 
 
 //        STEP:6 Processing the result
-        rs.next(); // it is used for pointing to the correct row
-        String name = rs.getString("sname"); // we are mentioning the column name of the table to get the actual data
-        System.out.println("Name: "+name);
+
+//        in this step we are printing only 1 column data
+
+//        rs.next(); // it is used for pointing to the correct row(Point to next line)
+//        String name = rs.getString("sname"); // we are mentioning the column name of the table to get the actual data
+//        System.out.println("Name: "+name);
+
+
+//        Printing Entire Table
+        while(rs.next()){ // "rs.next()" is used for pointing to next row
+            System.out.print(rs.getInt(1)+"-");
+            System.out.print(rs.getInt(2)+"-");
+            System.out.println(rs.getString(3));
+        }
+
 //        STEP:7 Closing connection
         con.close();
         System.out.println("Connection closed");

@@ -2,6 +2,9 @@ import java.sql.*;
 
 public class DemoJDBC1 {
     public static void main(String[] args) throws Exception{
+        String url = "jdbc:postgresql://localhost:5433/demoJDBC"; // Format: JDBC:Postgres Account(Software name): Database Name.  since the PostgreSql software is working on network we have to use "localhost:5432"
+        String uname = "postgres"; //default username for postgres
+        String pass = "syed166114"; // your set password
 
         String sql = "select * from student";
 
